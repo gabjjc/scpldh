@@ -37,13 +37,6 @@ public class RouterController {
 		return repository.findAll();
 	}
 	
-	@GetMapping("/getip")
-	public String getIp() {
-		System.out.println("Your server is up and running at port: " + environment.getProperty("local.server.ip"));
-		return environment.getProperty("local.server.ip");
-		
-	}
-	
 	@PostMapping("/usuario")
 	public long addUser(@RequestBody Usuario usuario) {
 		Usuario nuevo = repository.save(usuario);
