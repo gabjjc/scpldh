@@ -1,7 +1,5 @@
 package com.ldh.routerScp.controller;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +25,11 @@ public class RouterController {
 	@Autowired
 	UsuarioRepository repository;
  
+	@GetMapping("/test")
+	public String test() {
+		return "Esta es una prueba";
+	}
+	
 	@GetMapping("/usuario/{id}")
 	public Usuario getUsuarioById(@PathVariable("id") long id) {
 		return repository.findById(id);
